@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Welcome to CSS Basics">
+        <title>Welcome to CSS Basics</title>
+        <style>
+            h1 {
+                color: blue;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            p:nth-of-type(2){
+                font-style: italic;
+            }
+            
+            .box {
+                width: 300px;
+                height: 150px;
+                padding: 20px;
+                margin: 30px auto;
+                border: 3px solid black;
+                background-color: lightgrey;
+        
+            }
+
+            .relative-box {
+                position: relative;
+                top: 20px;
+                left: 10px;
+            }
+
+            .absolute-box {
+                position: absolute;
+                top: 120px;
+                left: 220px;
+                background-color: lightblue;
+                
+            }
+
+            nav {
+                background-color: lightgreen;
+                padding: 10px;
+                margin: 0px auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20%;
+            }
+
+            footer {
+                text-align: center;
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            @media (max-width: 600px) {
+                body {
+                    background-color: lightblue;
+                }
+                nav li{
+                    display: block;
+                }
+                .box {
+                    width: 200px;
+                }
+            }
+        </style>
+    </head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#start">Start</a></li>
+            <li><a href="#internal">Internal CSS</a></li>
+            <li><a href="#positioning">Positioning</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Welcome to CSS Basics</h1>
+    </header>
+
+    <main>
+        <section id="start">
+            <p>CSS make web pages look amazing.</p>
+            <p>Inline CSS is simplebut repetitive.</p>
+            <footer>Created by Zakaria Majkouma
+                <p>Resize the browser to see the responsive design in action!</p>
+            </footer>
+        </section>
+
+        <section>
+            <p>Internal CSS organizes styles effectively.</p>
+            <div class="box">This is styled box!</div>
+            <p>This box is created using the box class and modified within the &lt;style&gt; block.</p>
+        </section>
+
+        <section>
+            <div class="relative-box">This box is relatively positioned.</div>
+            <div class="absolute-box">This box is absolutely positioned.</div>
+            <p>
+                Relative positioning moves an element in relation to its original position, 
+                keeping the space it would have occupied intact. Absolute positioning, on the other hand, 
+                removes the element from the normal document flow and positions it relative to its 
+                closest positioned ancestor or the viewport if no ancestor is positioned.
+            </p>
+        </section>
+    </main>
+</body>
+
+    
+</html>

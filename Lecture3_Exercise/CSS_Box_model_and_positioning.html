@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display & Positioning Explained</title>
+    <style>
+        .inline-example span {
+            color: red;
+            font-weight: bold;
+        }
+
+        .inline {
+            display: inline;
+            background-color: lightblue;
+            padding: 5px;
+        }
+
+        .block {
+            display: block;
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        .inline-block {
+            display: inline-block;
+            background-color: lightcoral;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            margin: 5px;
+        }
+
+        .static {
+            position: static;
+            background-color: lightgray;
+            padding: 5px;
+        }
+
+        .relative {
+            position: relative;
+            left: 20px;
+            background-color: orange;
+            padding: 5px;
+        }
+
+        .absolute-container {
+            position: relative;
+            border: 2px dashed black;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .absolute {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            background-color: purple;
+            color: white;
+            padding: 5px;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: darkblue;
+            color: white;
+            padding: 20px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 10px;
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Understanding CSS Display & Positioning</h2>
+
+    <h3>1. Inline Element (<span>)</h3>
+    <p class="inline-example">This is an <span>inline element</span> inside a sentence.</p>
+
+    <h3>2. display: inline;</h3>
+    <div class="inline">I'm inline</div>
+    <div class="inline">I'm also inline</div>
+
+    <h3>3. <div> Block Element</h3>
+    <div class="block">I'm a block element</div>
+
+    <h3>4. display: block;</h3>
+    <div class="block">Block elements start on a new line.</div>
+
+    <h3>5. display: inline-block;</h3>
+    <div class="inline-block">Inline-block 1</div>
+    <div class="inline-block">Inline-block 2</div>
+
+    <h3>6. position: static;</h3>
+    <div class="static">Static position (default)</div>
+
+    <h3>7. position: relative;</h3>
+    <div class="relative">I am moved 20px to the right</div>
+
+    <h3>8. position: absolute;</h3>
+    <div class="absolute-container">
+        <p>I'm inside a relative container.</p>
+        <div class="absolute">I am absolute</div>
+    </div>
+
+    <h3>9. position: fixed;</h3>
+    <div class="fixed">I stay fixed on screen</div>
+
+    <h3>10. position: sticky;</h3>
+    <div class="sticky">I stick when you scroll</div>
+
+    <p style="height: 1000px;">Scroll down to see how "fixed" and "sticky" work!</p>
+
+</body>
+</html>

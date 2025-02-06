@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Made by SYRIAN hands">
+        <title>Made by SYRIAN hands</title>
+        <link rel="website icon" type="png" href="Syria">
+
+        <style>
+            h1 {
+                color: blue;
+                font-size: 35px;
+            }
+
+            .box {
+                width: 300px;
+                height: 150px;
+                padding: 20px;
+                margin: 30px auto;
+                border: 3px solid black;
+                background-color: lightgrey;
+        
+            }
+
+            nav {
+                background-color: lightgreen;
+                padding: 10px;
+                margin: 0px auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+           #title {
+                color: red;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .horizontal-list {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+                padding: 0;
+                margin: 0;
+                
+            }
+
+            @media (max-width: 800px) {
+                body {
+                    background-color: rgb(197, 228, 238);
+                }
+            }
+        </style>
+
+    </head>
+
+
+<body>
+    <header>
+        <h1 style="color: red">HTML Overview Project</h1>
+        <p>A simple project demonstrating various HTML features</p>
+    </header>
+
+
+<h1>My First Heading</h1>
+<h2>My Second Heading</h2>
+<h3>My Third Heading</h3>
+<h4>My Fourth Heading</h4>
+<h5>My Fifth Heading</h5>
+<h6>My Sixth Heading</h6>
+<p>My first paragraph.</p>
+<p>My Second paragraph<br>with line break tag</p>
+<p>This text use <em>italic</em></p>
+<p>This text use <strong>bold</strong></p>
+<p>Learn to Code using <a href="https://www.w3schools.com/html/html_basic.asp">Anchor</a> and href=""</p>
+<p>href is an attribute. All attribute have two things in common: they provide extra information and they go inside the opening tag.</p>
+<p>Attributes are added after the name of the tag, and before the > closing sign.</p>
+<h3>HTML Images</h3>
+<img src="https://pngimg.com/uploads/fcb_logo/fcb_logo_PNG18.png" width="231" height="154">
+<br>
+<button>Sign in</button>
+<button>Create account</button>
+<button style="color: white; background-color: rgb(245, 162, 9); border: 1px solid black;">
+    Click Me!
+</button>
+<br>
+        <!-- Containers are HTML elements used to group content and structure your page.
+        <article>: Represents a standalone piece of content (e.g., a blog post).
+        <aside>: Represents content related to the main content (e.g., a sidebar).
+        <header> and <footer>: Used for the top and bottom sections of a page or content block.
+        <main>: Represents the main content of a webpage.
+        <nav>: Represents a navigation menu.
+        <section>: Defines a section of content.
+        <figure> and <figcaption>: Used for images with captions.
+        -->
+
+        <main>
+            <article>
+             <header>
+             <h2>The Benefits of Daily Walking</h2>
+              <p><time datetime="2025-01-23">January 23, 2025</time> by <strong>Zakaria</strong></p>
+             </header>
+             <p>Walking every day can significantly improve your physical and mental health. It helps to burn calories, strengthen your heart, and boost your mood.</p>
+             <p>Studies show that just 30 minutes of walking daily can reduce the risk of chronic diseases like diabetes and heart disease.</p>
+             <footer>
+               <p>Tags: <a href="https://www.1177.se/liv--halsa/" target="_blank">Health</a>, 
+                <a href="https://musclewiki.com/">Fitness</a></p>
+             </footer>
+         </article>
+        </main>
+  
+        <aside>
+            <h2>Quick Tips</h2>
+            <ul>
+              <li>Wear comfortable shoes.</li>
+              <li>Stay hydrated.</li>
+              <li>Start with a short walk and gradually increase your time.</li>
+              <li>Consider walking with a friend for motivation.</li>
+            </ul>
+        </aside>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Semantic tags are meaningful HTML tags that describe their purpose in the content:
+        <b>: Bold text.
+        <strong>: Important text (emphasized strongly).
+        <i>: Italic text.
+        <em>: Emphasized text.
+        <mark>: Highlights text.
+        <small>: Smaller-sized text.
+        <del> and <ins>: Deleted and inserted text, respectively.
+        <sub> and <sup>: Subscript and superscript text (e.g., in chemical formulas or math).
+        -->
+        <br>
+        <b>Hi my name is Zakaria</b>
+        <br>
+        <strong>Hi my name is Zakaria</strong>
+        <br>
+        <i>Hi my name is Zakaria</i>
+        <br>
+        <em>Hi my name is Zakaria</em>
+        <br>
+        <mark>Hi my name is Zakaria</mark>
+        <br>
+        <small>Hi my name is Zakaria</small>
+        <br>
+        <del>Hi my name is Zakaria</del>
+        <br>
+        <ins>Hi my name is Zakaria</ins>
+        <br>
+        <sub>Hi my name is Zakaria</sub>
+        <br>
+        <sup>Hi my name is Zakaria</sup>
+        <br>
+
+        <!--List help organize items: -->
+        <h2>Steps to Bake a Cake</h2>
+        <ol> <!--Items are numbered.-->
+            <li>Preheat the oven to 180°C (350°F).</li>
+            <li>Mix the dry ingredients together.</li>
+            <li>Combine the wet ingredients.</li>
+            <li>Slowly mix the wet and dry ingredients.</li>
+            <li>Bake for 30 minutes.</li>
+        </ol>
+
+        <h2>Things You Need for a Hike</h2>
+        <ul> <!--Items are bulleted-->
+            <li>Backpack</li>
+            <li>Water bottle</li>
+            <li>First-aid kit</li>
+            <li>Snacks</li>
+            <li>Comfortable shoes</li>
+        </ul>
+
+        <h2>Programming Languages by Category</h2>
+        <ul> <!--Lists within list-->
+            <li>Web Development
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </li>
+            <li>Backend Development
+                <ul>
+                    <li>Python</li>
+                    <li>Ruby</li>
+                    <li>PHP</li>
+                </ul>
+            </li>
+            <li>Mobile App Development
+                <ul>
+                    <li>Swift</li>
+                    <li>Kotlin</li>
+                    <li>Flutter</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!--Tables organize data into rows and columns: <table> <tr> <td> <th> -->
+        <!--    <tr> = table row /
+                <td> = table data /
+                <th> = table header /
+        -->
+        <table border="5">
+            <tr>
+                <th colspan="3">Shopping Cart Summary</th>
+            </tr>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td>Apples</td>
+                <td>$2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Bananas</td>
+                <td>$1</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Oranges</td>
+                <td>$3</td>
+                <td>4</td>
+            </tr>
+            
+        </table>
+        <br>
+        <table border="5"> <!--Merging Rows-->
+            <tr>
+                <th>Department</th>
+                <th>Employee</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Sales</td>
+                <td>John</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+            </tr>
+            <tr>
+                <td>Marketing</td>
+                <td>Zizo</td>
+            </tr>
+        </table>
+        <br>
+        <table border="5"> <!--Advanced Table-->
+            <tr>
+                <th rowspan="2">Product</th>
+                <th colspan="2">Details</th>
+                <th>Stock</th>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Available</th>
+            </tr>
+            <tr>
+                <td>Notebook</td>
+                <td>$10</td>
+                <td>Stationery</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>$500</td>
+                <td>Electronics</td>
+                <td>20</td>
+            </tr>
+        </table>
+        <br>
+        <!--Forms collect user input: <form> <input> <label> <textarea> <select> <button> -->
+            <h2>Login Form</h2>
+            <form action="/login" method="post">
+                <!--
+                action="/login": Specifies the server endpoint for processing the form data.
+                method="post": Sends data securely to the server (not visible in the URL).
+                -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            
+                <button type="submit">Login</button>
+            </form>
+            <br>
+            <h2>A Contact Form</h2>
+            <form action="/submit_contact" method="get">
+                <!--
+                method="get": Sends data appended to the URL (less secure but suitable for simple searches or public forms).
+                <textarea>: Allows users to input multiline text.
+                -->
+                <lable for="name">Name</lable>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="massage">Massage</label>
+                <textarea id="massage" name="massage" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+            <br>
+            <h2>A Form with Radio Buttons and Checkboxes</h2>
+            <form action="/submit_preferences" method="post">
+                <p>Choose your favorite fruit</p>
+                <input type="radio" id="apple" name="fruit" value="apple">
+                <label for="apple">Apple</label>
+
+                <input type="radio" id="banana" name="fruit" value="banana">
+                <label for="banana">Banana</label>
+                
+                <p>Select your hobbies:</p>
+                <input type="checkbox" id="reading" name="hobby" value="reading">
+                <label for="reading">Reading</label>
+            
+                <input type="checkbox" id="traveling" name="hobby" value="traveling">
+                <label for="traveling">Traveling</label>
+            
+                <button type="submit">Submit</button>
+
+            </form>
+            <br>
+
+            <nav>
+                <ul class="horizontal-list">
+                    <li><a href="#start">Start</a></li>
+                    <li><a href="#internal">Internal CSS</a></li>
+                    <li><a href="#positioning">Positioning</a></li>
+                </ul>
+            </nav>
+            <br>
+            <section>
+                <p id="title">Internal CSS organizes styles effectively.</p>
+                <div class="box"><strong>This is styled box!</strong></div>
+                <p>This box is created using the box class and modified within the &lt;style&gt; block.</p>
+            </section>
+            <br>
+
+            
+
+</body>
+</html>

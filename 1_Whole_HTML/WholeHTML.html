@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML Overview Project">
+    <title>HTML Overview Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: underline;
+            color: #333;
+        }
+        section {
+            padding: 20px;
+            background-color: #0080ff2a;
+            margin: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .code {
+            background-color: #efefef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML Overview Project</h1>
+        <p>A simple project demonstrating various HTML features</p>
+    </header>
+
+    <nav>
+        <a href="#structure">HTML Structure</a>
+        <a href="#forms">Forms</a>
+        <a href="#multimedia">Multimedia</a>
+        <a href="#tables">Tables</a>
+        <a href="#semantics">Semantic Tags</a>
+    </nav>
+
+    <section id="structure">
+        <h2>HTML Structure</h2>
+        <p>HTML is structured with a series of elements that define the layout of a webpage. Here's a basic example:</p>
+        <div class="code">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Title of the page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+    </section>
+
+    <section id="forms">
+        <h2>Forms in HTML</h2>
+        <p>Forms allow users to submit data. Here's an example form:</p>
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <section id="multimedia">
+        <h2>Multimedia in HTML</h2>
+        <p>HTML supports embedding images, audio, and video:</p>
+        
+        <h3>FC Barcelona</h3>
+        <img src="https://yt3.googleusercontent.com/obnnFvh_OSUvbvEiHR8bW1W5z7fxmGBh3AWWXCoeH_iyB7gVjqA20NK4f1RWZgGaFzva7M_Wb3Q=s900-c-k-c0x00ffffff-no-rj" width="200">
+
+        <h3>Audio Example</h3>
+        <audio controls muted>
+            <source src="FCB.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Video Example</h3>
+        <video width="384" height="288" controls muted>
+            <source src="MESSI.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="tables">
+        <h2>Tables in HTML</h2>
+        <p>Tables are used to display tabular data. Here's an example:</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>30</td>
+                <td>San Francisco</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="semantics">
+        <h2>Semantic Tags in HTML</h2>
+        <p>Semantic tags clearly describe the meaning of the content inside them, improving both readability and accessibility. Some common semantic tags include:</p>
+        <ul>
+            <li><code>&lt;article&gt;</code> – Defines an article.</li>
+            <li><code>&lt;section&gt;</code> – Defines a section in a document.</li>
+            <li><code>&lt;nav&gt;</code> – Defines a container for navigation links.</li>
+            <li><code>&lt;aside&gt;</code> – Defines content aside from the main content.</li>
+            <li><code>&lt;footer&gt;</code> – Defines the footer of a document.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>HTML Overview Project &copy; 2024</p>
+    </footer>
+
+</body>
+</html>

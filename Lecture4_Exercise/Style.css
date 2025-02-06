@@ -1,0 +1,13 @@
+.container {
+    display: flex;         /* Enables Flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;   /* Centers items vertically */
+    gap: 10px;            /* Adds spacing between items */
+}
+  
+.container2 {
+    display: grid;  
+    grid-template-columns: repeat(3, 100px); /* 3 columns, each 100px */
+    grid-template-rows: repeat(2, 100px);   /* 2 rows, each 100px */
+    gap: 10px;  /* Space between items */
+  }

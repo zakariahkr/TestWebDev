@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Explained</title>
+    <style>
+        /* 1. CSS Selectors with Multiple Classes */
+        .class1.class2 {
+            color: blue;
+        }
+
+        /* 2. Descendant Selectors */
+        .class1 .class2 {
+            color: green;
+        }
+
+        /* 3. Element and Class Selectors */
+        p.highlight {
+            background-color: yellow;
+        }
+
+        /* 4. Type Selectors */
+        [type] {
+            border: 1px solid black;
+        }
+
+        /* 5. Grouping Selectors */
+        h1, h2 {
+            font-family: Arial, sans-serif;
+        }
+
+        /* 6. Child Selectors */
+        div > span {
+            color: red;
+        }
+
+        /* 7. Adjacent Sibling Selectors */
+        ul > li {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Understanding CSS Selectors</h1>
+
+    <!-- 1. HTML Elements with Classes -->
+    <div class="class1 class2">This is a div with both class1 and class2 (Blue text)</div>
+    <div class="class1">
+        <p class="class2">This is a paragraph inside class1 with class2 (Green text)</p>
+    </div>
+
+    <!-- 2. Element and Class Selectors -->
+    <p class="highlight">This paragraph has the "highlight" class (Yellow background)</p>
+
+    <!-- 3. Type Selectors -->
+    <input type="text" placeholder="I have a black border">
+    <button type="submit">I also have a black border</button>
+
+    <!-- 4. Grouping Selectors -->
+    <h2>This is an h2 (Arial Font)</h2>
+
+    <!-- 5. Child Selectors -->
+    <div>
+        <span>This span is inside a div (Red text)</span>
+    </div>
+
+    <!-- 6. Adjacent Sibling Selectors -->
+    <ul>
+        <li>List item (Square bullet)</li>
+        <li>Another list item (Square bullet)</li>
+    </ul>
+
+</body>
+</html>
