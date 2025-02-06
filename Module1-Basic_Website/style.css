@@ -1,6 +1,5 @@
 body {
-    /* background: linear-gradient(100deg, #8bff6b6d, #0000ff8a); */
-    background: lightblue;
+    background: linear-gradient(100deg, #8bff6b6d, #0000ff8a);
     display: grid;
     grid-template-areas: "header header header"
                          "sidebar main extra"
