@@ -1,59 +1,18 @@
 body {
-    background: linear-gradient(100deg, #8bff6b6d, #0000ff8a);
+    /* background: linear-gradient(100deg, #8bff6b6d, #0000ff8a); */
+    background: lightblue;
     display: grid;
     grid-template-areas: "header header header"
                          "sidebar main extra"
                          "footer footer footer";
 }
-
 .books {
     display: grid;
     grid-template-areas: "book1 book2 book3"
                          "book4 book5 book6";
 }
-
-#book1 img, #book2 img, #book3 img, #book4 img, #book5 img, #book6 img {
-    height: 170px;
-    width: 120px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-}
-
-#book1, #book2, #book3, #book4, #book5, #book6 {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-#book1 button, #book2 button, #book3 button, #book4 button, #book5 button, #book6 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    display: grid;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 3px solid #00ff00;
-    box-shadow: 0 0 10px #00ff00;
-    align-items: center;
-    justify-content: center;
-    display: inline-block;
-}
-
-
 @media (max-width: 1024px) {
     body {
-        background: linear-gradient(100deg, #8bff6b6d, #0000ff8a);
         display: grid;
         grid-template-areas: 
         "header"      
@@ -61,6 +20,9 @@ body {
         "main"
         "extra"
         "footer";
+    }
+    #headerID {
+        flex-direction: column;
     }
     .books {
         display: grid;
@@ -72,164 +34,118 @@ body {
         "book5"
         "book6";
     }
-
-    #book1, #book2, #book3, #book4, #book5, #book6 {
-        padding: 10px;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #book1 img, #book2 img, #book3 img, #book4 img, #book5 img, #book6 img {
-        height: 170px;
-        width: 120px;
-        border: 2px solid #333;
-        border-radius: 10px;
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        object-fit: cover;
-        margin: 10px;
-    }
-
-    #book1 button, #book2 button, #book3 button, #book4 button, #book5 button, #book6 button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        display: grid;
-        font-size: 14px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 10px;
-        border: 3px solid #00ff00;
-        box-shadow: 0 0 10px #00ff00;
-        align-items: center;
-        justify-content: center;
-        display: inline-block;
-        margin: 10px;
-    }
-
-    main {
-        grid-area: main;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #sidebar {
-        grid-area: sidebar;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 10px auto;
-
-    }
     #sidebar nav ul  {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        
+        flex-direction: row;        
     }
     #sidebar nav ul li  {
-        list-style-type: none;
-        align-items: center;
-        text-align: center;
         padding: 2px;
         margin-right: 5px;
         margin-left: 5px;
         margin-bottom: 10px;
     }
 }
-
 header {
     grid-area: header;
     display: flex;
+    flex-direction: row;
     padding: 0px;
     margin: 10px;
     background-color: rgb(173, 230, 180);
     border: 5px double #4CAF50;
-    position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 30px;
     justify-content: space-evenly;
     align-items: center;
 }
-
-header li {
-    list-style-type: none;
-    align-items: center;
-    border-radius: 50px;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 4px;
-    background: rgb(158, 219, 165);
-    border: 5px double #4CAF50;
-    margin: 10px;
-}
-
-header ul {
-    margin: 0px;
-    padding: 0px;
-}
-
 #logo{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border-style: solid;
 }
-
+header ul {
+    margin: 0px;
+    padding: 0px;
+}
+header nav ul li {
+    list-style-type: none;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 3px;
+    margin: 10px;
+    background: rgb(158, 219, 165);
+    border: 5px double #4CAF50;
+}
 #sidebar {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    list-style-type: none;
     align-items: center;
-    position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     background-color: rgb(173, 230, 180);
     border: 5px double #4CAF50;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 10px;
     margin: 10px;
 }
-
-#sidebar li {
-    border-radius: 50px;
-    position: relative;
+#sidebar nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+#sidebar nav ul li {
+    border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
     list-style-type: none;   
-    padding: 2px;
+    padding: 3px;
     margin-bottom: 50px;
     background: rgb(158, 219, 165);
     border: 5px double #4CAF50;
 }
-
-#sidebar ul {
-    margin: 0px;
-    padding: 0px;
-}
-
 main {
     grid-area: main;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 10px;
     margin: 10px;
-    position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 30px;
     border: 5px double #4CAF50;
 }
+.books p{
+    font-size: 12px;
 
-
+}
+#book1 img, #book2 img, #book3 img, #book4 img, #book5 img, #book6 img {
+    object-fit: cover;
+    height: 170px;
+    width: 120px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+}
+#book1, #book2, #book3, #book4, #book5, #book6 {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#book1 button, #book2 button, #book3 button, #book4 button, #book5 button, #book6 button {
+    background-color: #4CAF50;
+    padding: 10px 30px;
+    font-size: 14px;
+    margin-top: 20px; 
+    border-radius: 10px;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
 footer {
     grid-area: footer;
     display: flex;
@@ -237,13 +153,11 @@ footer {
     text-align: center;
     padding: 10px;
     margin: 10px;
-    position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     background-color: rgb(173, 230, 180);
     border: 5px double #4CAF50;
-    border-radius: 10px;
+    border-radius: 30px;
 }
-
 a {
     text-decoration: none;
     color: rgb(42, 88, 17);
@@ -257,8 +171,6 @@ a {
     padding: 20px;
     margin: 10px;
 }
-
-
 #price-filter {
     grid-area: price-filter;
     display: flex;
@@ -268,11 +180,10 @@ a {
     margin: 10px;
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: rgb(173, 230, 180);
-    border: 5px double #4CAF50;
+    border: 5px double #af4c4c;
 }
-
 #author-filter {
     grid-area: author-filter;
     display: flex;
@@ -282,28 +193,28 @@ a {
     margin: 10px;
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: rgb(173, 230, 180);
-    border: 5px double #4CAF50;
+    border: 5px double #af4c4c;
 }
-
 .book-card {
     width: 150px;
     margin: 10px;
-    align-items: center;
-    position: relative;
+    padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     background-color: rgb(158, 219, 165);
-    border: 5px double #4CAF50;
+    border: 5px double #af4c4c;
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
     text-align: center;
 }
 
+#cart{
+    text-align: center;
+}
 
-#cart {
-    display: grid;
+#cart #cart-content #book1, #cart #cart-content #book2 {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     padding: 10px;
@@ -311,17 +222,24 @@ a {
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    border: 5px double #4CAF50;
-    
+    border: 5px double #4CAF50;   
 }
 
+#cart #cart-content #book1 ul, #cart #cart-content #book2 ul {
+    list-style-type: none;   
+    margin: 20px;
+}
 
-.cart-content article button {
-    background-color: #af4c4c !important;
-    color: white !important;
-    border-radius: 10px !important;
-    border: 3px solid #ff0000 !important;
-    box-shadow: 0 0 10px #ff0000 !important;
+#cart-content article button {
+    background-color: #af4c4c ;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid #ff0000 ;
+    box-shadow: 0 0 10px #ff0000 ;
+}
+
+#cart p {
+    font-size: 12px;
 }
 
 .total-price{
