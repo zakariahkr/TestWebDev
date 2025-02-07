@@ -19,9 +19,17 @@ body {
         "main"
         "extra"
         "footer";
+        grid-template-columns: 1fr; /* Ensure a single column layout */
     }
     #headerID {
         flex-direction: column;
+        text-align: center;
+    }
+    #headerID nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Allow categories to wrap to the next line */
+        justify-content: center; /* Center the categories */
     }
     .books {
         display: grid;
@@ -32,16 +40,28 @@ body {
         "book4"
         "book5"
         "book6";
+        grid-template-columns: 1fr; /* Ensure a single column layout */
     }
     #sidebar nav ul  {
         display: flex;
-        flex-direction: row;        
+        flex-direction: row; 
+        flex-wrap: wrap; /* Allow categories to wrap to the next line */ 
+        justify-content: center; /* Center the categories */      
     }
     #sidebar nav ul li  {
         padding: 2px;
         margin-right: 5px;
         margin-left: 5px;
         margin-bottom: 10px;
+    }
+
+    .filter-section {
+        grid-template-areas: 
+            "price-filter"
+            "author-filter";
+        grid-template-columns: 1fr; /* Ensure a single column layout */
+        justify-content: center;
+        align-items: center;
     }
 }
 header {
@@ -115,6 +135,8 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     border: 5px double #4CAF50;
+    max-width: 100%; /* Ensure the main section doesn't overflow */
+    overflow: hidden; /* Hide any overflow */
 }
 .books p{
     font-size: 12px;
@@ -166,7 +188,7 @@ a {
 
 .filter-section {
     display: grid;
-    grid-template-areas: "price-filter author-filter";
+    grid-template-areas: "price-filter" "author-filter";
     padding: 20px;
     margin: 10px;
 }
