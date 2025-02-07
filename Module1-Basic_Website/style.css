@@ -3,7 +3,7 @@ body {
     display: grid;
     grid-template-areas: "header header header"
                          "sidebar main extra"
-                         "footer footer footer";
+                         "footer footer footer";                         
 }
 .books {
     display: grid;
