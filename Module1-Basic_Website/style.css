@@ -23,7 +23,7 @@ header {
     flex-direction: row;
     padding: 0px;
     margin: 10px;
-    background-color: rgb(173, 230, 180);
+    background-color: rgba(173, 230, 180, 0.6);
     border: 5px double #4CAF50;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
@@ -66,7 +66,7 @@ header nav ul li {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgb(173, 230, 180);
+    background-color: rgba(173, 230, 180, 0.6);
     border: 5px double #4CAF50;
     border-radius: 30px;
     padding: 10px;
@@ -102,8 +102,8 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     border: 5px double #4CAF50;
-    max-width: 100%; /* Ensure the main section doesn't overflow */
-    overflow: hidden; /* Hide any overflow */
+    max-width: 100%;
+    overflow: hidden;
 }
 a {
     text-decoration: underline;
@@ -166,7 +166,7 @@ mark {
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    background-color: rgb(173, 230, 180);
+    background-color: rgba(173, 230, 180, 0.6);
     border: 5px double #af4c4c;
 }
 #author-filter {
@@ -179,7 +179,7 @@ mark {
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    background-color: rgb(173, 230, 180);
+    background-color: rgba(173, 230, 180, 0.6);
     border: 5px double #af4c4c;
 }
 .book-card {
@@ -187,7 +187,7 @@ mark {
     margin: 10px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgb(158, 219, 165);
+    background-color: rgba(173, 230, 180, 0.6);
     border: 5px double #af4c4c;
     border-radius: 10px;
     text-align: center;
@@ -205,7 +205,7 @@ footer {
     padding: 10px;
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgb(173, 230, 180);
+    background-color: rgba(173, 230, 180, 0.6);
     border: 5px double #4CAF50;
     border-radius: 30px;
 }
@@ -266,6 +266,8 @@ footer {
 /* ------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------ */
 
+/*-------------------------------------@Media-------------------------------------*/
+/* ------------------------------------------------------------------------------ */
 @media (max-width: 1024px) {
     body {
         display: grid;
@@ -275,7 +277,7 @@ footer {
         "main"
         "extra"
         "footer";
-        grid-template-columns: 1fr; /* Ensure a single column layout */
+        grid-template-columns: 1fr;
     }
     #headerID {
         flex-direction: column;
@@ -284,8 +286,8 @@ footer {
     #headerID nav ul {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap; /* Allow categories to wrap to the next line */
-        justify-content: center; /* Center the categories */
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .books {
         display: grid;
@@ -296,13 +298,13 @@ footer {
         "book4"
         "book5"
         "book6";
-        grid-template-columns: 1fr; /* Ensure a single column layout */
+        grid-template-columns: 1fr;
     }
     #sidebar nav ul  {
         display: flex;
         flex-direction: row; 
-        flex-wrap: wrap; /* Allow categories to wrap to the next line */ 
-        justify-content: center; /* Center the categories */      
+        flex-wrap: wrap;
+        justify-content: center;     
     }
     #sidebar nav ul li  {
         padding: 2px;
@@ -310,13 +312,14 @@ footer {
         margin-left: 5px;
         margin-bottom: 10px;
     }
-
     .filter-section {
         grid-template-areas: 
             "price-filter"
             "author-filter";
-        grid-template-columns: 1fr; /* Ensure a single column layout */
+        grid-template-columns: 1fr;
         justify-content: center;
         align-items: center;
     }
 }
+/* ------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------ */
