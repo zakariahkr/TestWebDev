@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="png" href="webicon.png">
+</head>
+
+<body>
+    <header id="headerID">
+        <img src="ZBook.png" alt="ZAKBOOK Logo" id="logo">
+        
+        <a href="posts.html">
+            <section id="symbolSection">
+                <img src="posts.png" alt="Post symbol" id="symbol">
+                <h1>Posts</h1>
+            </section>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <aside id="sidebar">
+        <h2>Friends</h2>
+        <nav>
+            <ul>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Emily Johnson</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Samantha Lee</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Jordan Mitchell</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Emily Rivera</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Chris Thompson</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Taylor Brooks</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Ryan Patel</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Sophia Nguyen</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Daniel Romero</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Olivia Bennett</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Michael Hayes</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Ashley Parker</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Ethan Sullivan</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Jessica Flores</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Lionel Messi</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">C.Ronaldo</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Nathan Kim</a></li>
+                <li><img src="userShape.png" alt="userShape Logo" id="userShape"><a href="#Test">Zakaria</a></li>
+
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="nav-tabs">
+            <button class="tab-button active" data-target="posts">Posts</button>
+            <button class="tab-button" data-target="users">Users</button>
+            <button class="tab-button" data-target="contact">Contact</button>
+        </div>
+    
+        <div id="posts" class="content-section active">
+            <!-- Posts will be loaded here -->
+        </div>
+    
+        <div id="users" class="content-section">
+            <!-- Users will be loaded here -->
+        </div>
+    
+        <div id="contact" class="content-section">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required minlength="3">
+                    <div class="error" id="name-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <div class="error" id="email-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" required minlength="10"></textarea>
+                    <div class="error" id="message-error"></div>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <address>
+            &copy;
+            Copy Rights ZIZO <br>
+            Author: Zakaria Majkouma <br>
+            Email: <a href="mailto: zakariamajkouma2001@gmail.com">zakariamajkouma2001@gmail.com</a> <br>
+            Phone: 0707259017 <br>
+        </address>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

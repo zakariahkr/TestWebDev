@@ -52,7 +52,7 @@ header nav ul li {
     text-align: center;
     padding: 3px;
     margin: 10px;
-    background: rgb(158, 219, 165);
+    background: rgb(167, 232, 175);
     border: 5px double #4CAF50;
 }
 /* ------------------------------------------------------------------------------ */
@@ -145,6 +145,15 @@ mark {
     border: 3px solid #00ff00;
     box-shadow: 0 0 10px #00ff00;
 }
+/* #book1 button:hover, #book2 button:hover, #book3 button:hover, #book4 button:hover, #book5 button:hover, #book6 button:hover  {
+    background-color: rgb(147, 117, 175);
+
+}
+.books:hover {
+    transform: scale(1.01);
+} */
+
+
 /* ------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------ */
 
