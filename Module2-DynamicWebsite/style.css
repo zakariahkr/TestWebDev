@@ -557,7 +557,43 @@ footer {
 
 
 
+        /* Basic styles for posts, modal, and layout */
+        .post-card { border: 1px solid #ddd; padding: 10px; margin: 10px; }
+        .tag { background-color: #f0f0f0; padding: 3px 6px; margin-right: 5px; }
+        .reactions { font-size: 14px; margin-top: 5px; }
+        .comment { margin-top: 10px; padding: 10px; border-top: 1px solid #ddd; }
+        .username { color: blue; cursor: pointer; }
 
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
 
 

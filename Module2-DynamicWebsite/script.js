@@ -1,3 +1,4 @@
+// Classes for Post, User, and Comment
 class Post {
     constructor(postData, user, comments) {
         this.id = postData.id;
@@ -30,6 +31,7 @@ class Comment {
     }
 }
 
+// Fetch functions
 async function fetchData(url) {
     try {
         const response = await fetch(url);
@@ -62,6 +64,7 @@ async function fetchAllData(url) {
     }
 }
 
+// Render functions
 let allPosts = [];
 let displayedPostsCount = 0;
 const postsPerPage = 5;
@@ -113,20 +116,15 @@ function renderMorePosts() {
                 <span>👍 ${post.reactions.likes}</span>
                 <span>👀 ${post.views}</span>
             </div>
-            <p>Author: ${post.user?.name || 'Unknown'}</p>
-            
-            <button class="toggle-comments" onclick="toggleComments(${post.id})">
-                Show Comments (${post.comments.length})
-            </button>
-            
-            <div class="comments-section" id="comments-${post.id}" style="display: none;">
+            <p>Author: <span class="username" onclick="openUserProfile(${post.user.id})">${post.user?.name || 'Unknown'}</span></p>
+
+            <div class="comments-section">
                 ${post.comments.map(comment => 
                     `<div class="comment">
                         <div class="comment-user">${comment.user.fullName}</div>
                         <p>${comment.body}</p>
                         <div class="comment-likes">❤️ ${comment.likes}</div>
-                    </div>`
-                ).join('')}
+                    </div>`).join('')}
             </div>
         </div>`
     ).join('');
@@ -138,88 +136,24 @@ function renderMorePosts() {
     }
 }
 
-function toggleComments(postId) {
-    const commentsSection = document.getElementById(`comments-${postId}`);
-    const button = commentsSection.previousElementSibling;
-    
-    if (commentsSection.style.display === 'none') {
-        commentsSection.style.display = 'block';
-        button.textContent = `Hide Comments (${commentsSection.children.length})`;
-    } else {
-        commentsSection.style.display = 'none';
-        button.textContent = `Show Comments (${commentsSection.children.length})`;
-    }
+// Function to handle the modal
+function openUserProfile(userId) {
+    const user = allPosts.find(post => post.user.id === userId).user;
+
+    // Populate the modal with user information
+    document.getElementById('modalUserName').textContent = user.name;
+    document.getElementById('modalUserEmail').textContent = `Email: ${user.email}`;
+    document.getElementById('modalUserAddress').textContent = `Address: ${user.address.address}, ${user.address.city}`;
+
+    // Display the modal
+    document.getElementById('userProfileModal').style.display = 'block';
 }
 
-function renderUsers(users) {
-    const container = document.getElementById('users');
-    container.innerHTML = users.map(user => 
-        `<div class="user-card">
-            <h3>${user.name}</h3>
-            <p>Email: ${user.email}</p>
-            <p>Username: ${user.username}</p>
-            <p>Address: ${user.address.address}, ${user.address.city}</p>
-        </div>`
-    ).join('');
+function closeUserProfileModal() {
+    document.getElementById('userProfileModal').style.display = 'none';
 }
 
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-        button.classList.add('active');
-        document.getElementById(button.dataset.target).classList.add('active');
-    });
-});
-
-const form = document.querySelector('.contact-form');
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-function showError(element, message) {
-    element.classList.add('invalid');
-    element.nextElementSibling.textContent = message;
-}
-
-function clearError(element) {
-    element.classList.remove('invalid');
-    element.nextElementSibling.textContent = '';
-}
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let isValid = true;
-
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-
-    if (nameInput.value.trim().length < 3) {
-        showError(nameInput, 'Name must be at least 3 characters');
-        isValid = false;
-    } else {
-        clearError(nameInput);
-    }
-
-    if (!emailRegex.test(emailInput.value)) {
-        showError(emailInput, 'Please enter a valid email address');
-        isValid = false;
-    } else {
-        clearError(emailInput);
-    }
-
-    if (messageInput.value.trim().length < 10) {
-        showError(messageInput, 'Message must be at least 10 characters');
-        isValid = false;
-    } else {
-        clearError(messageInput);
-    }
-
-    if (isValid) {
-        alert('Form submitted successfully!');
-        form.reset();
-    }
-});
-
+// Scroll to load more posts
 function handleScroll() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
         renderMorePosts();
