@@ -9,7 +9,7 @@
     <link rel="website icon" type="png" href="webicon.png">
 </head>
 
-<body>
+<body id="postBody">
     <header id="headerID">
         <img src="ZBook.png" alt="ZAKBOOK Logo" id="logo">
         
@@ -57,19 +57,17 @@
     </aside>
 
     <main>
-        <!-- User Profile Modal -->
-            <div id="userProfileModal" class="modal">
-                <div class="modal-content">
+            <section id="userProfileModal" class="modal">
+                <section class="modal-content">
                     <span class="close-btn" onclick="closeUserProfileModal()">x</span>
                     <h2 id="modalUserName"></h2>
                     <p id="modalUserEmail"></p>
                     <p id="modalUserAddress"></p>
-                </div>
-            </div>
+                </section>
+            </section>
 
-        <!-- Posts and Users sections -->
-        <div id="posts"></div>
-        <div id="users"></div>
+        <section id="posts"></section>
+        <section id="users"></section>
     </main>
 
     <footer>

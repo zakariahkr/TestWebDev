@@ -88,7 +88,11 @@ async function loadAllData() {
         const user = usersMap.get(post.userId);
         const postComments = commentsData
             .filter(comment => comment.postId === post.id)
-            .map(comment => commentsMap.get(comment.id));
+            .map(comment => {
+                comment.user = usersMap.get(comment.user.id);
+                return new Comment(comment);
+            });
+
         return new Post(post, user, postComments);
     });
 
@@ -106,27 +110,30 @@ function renderMorePosts() {
     const postsToDisplay = allPosts.slice(displayedPostsCount, displayedPostsCount + postsPerPage);
 
     container.innerHTML += postsToDisplay.map(post => 
-        `<div class="post-card">
+        `<section class="post-card">
             <h2>${post.title}</h2>
             <p>${post.body}</p>
-            <div class="post-tags">
+            <section class="post-tags">
                 ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-            </div>
-            <div class="reactions">
+            </section>
+            <section class="reactions">
                 <span>👍 ${post.reactions.likes}</span>
                 <span>👀 ${post.views}</span>
-            </div>
-            <p>Author: <span class="username" onclick="openUserProfile(${post.user.id})">${post.user?.name || 'Unknown'}</span></p>
+            </section>
+            <p>By: <span class="username" onclick="openUserProfile(${post.user.id})">${post.user?.name || 'Unknown'}</span></p>
 
-            <div class="comments-section">
+            <section class="comments-section">
                 ${post.comments.map(comment => 
-                    `<div class="comment">
-                        <div class="comment-user">${comment.user.fullName}</div>
+                    `<section class="comment">
+                        <section class="comment-user" onclick="openCommentUserProfile(${comment.user.id})">
+                            ${comment.user.name}
+                        </section>
                         <p>${comment.body}</p>
-                        <div class="comment-likes">❤️ ${comment.likes}</div>
-                    </div>`).join('')}
-            </div>
-        </div>`
+                        <section class="comment-likes">❤️ ${comment.likes}
+                        </section>
+                    </section>`).join('')}
+            </section>
+        </section>`
     ).join('');
 
     displayedPostsCount += postsPerPage;
@@ -138,20 +145,80 @@ function renderMorePosts() {
 
 // Function to handle the modal
 function openUserProfile(userId) {
-    const user = allPosts.find(post => post.user.id === userId).user;
+    const user = allPosts.find(post => post.user.id === userId)?.user;
 
-    // Populate the modal with user information
+    if (!user) {
+        console.error('User not found');
+        return;
+    }
+
+    document.getElementById('modalUserName').textContent = user.name;
+    document.getElementById('modalUserEmail').textContent = `Email: ${user.email}`;
+    document.getElementById('modalUserAddress').textContent = `Address: ${user.address.address}, ${user.address.city}`;
+    document.getElementById('userProfileModal').style.display = 'block';
+}
+
+function openCommentUserProfile(userId) {
+    const user = allPosts.flatMap(post => post.comments)
+                         .find(comment => comment.user.id === userId)?.user;
+
+    if (!user) {
+        console.error('User not found');
+        return;
+    }
+
     document.getElementById('modalUserName').textContent = user.name;
     document.getElementById('modalUserEmail').textContent = `Email: ${user.email}`;
     document.getElementById('modalUserAddress').textContent = `Address: ${user.address.address}, ${user.address.city}`;
 
-    // Display the modal
     document.getElementById('userProfileModal').style.display = 'block';
 }
 
 function closeUserProfileModal() {
     document.getElementById('userProfileModal').style.display = 'none';
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const nameInput = document.getElementById("nameInput");
+    const emailInput = document.getElementById("emailInput");
+    const messageInput = document.getElementById("messageInput");
+    const checkbox = document.querySelector("input[type='checkbox']");
+    const submitButton = document.getElementById("submit");
+
+    form.addEventListener("submit", function (event) {
+        let isValid = true;
+        
+        // Validate Name (must not contain numbers)
+        const namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/;
+        if (!namePattern.test(nameInput.value.trim())) {
+            alert("Name must not contain numbers.");
+            isValid = false;
+        }
+        
+        // Validate Email (must contain '@' and '.')
+        if (!emailInput.value.includes("@") || !emailInput.value.includes(".")) {
+            alert("Please enter a valid email address.");
+            isValid = false;
+        }
+
+        // Validate Checkbox (must be checked)
+        if (!checkbox.checked) {
+            alert("You must confirm that your details are correct.");
+            isValid = false;
+        }
+
+        // Prevent form submission if validation fails
+        if (!isValid) {
+            event.preventDefault();
+        } else {
+            event.preventDefault(); // Prevent actual submission for demo purposes
+            alert("Your message has been sent successfully!");
+            form.reset();
+        }
+    });
+});
+
 
 // Scroll to load more posts
 function handleScroll() {
