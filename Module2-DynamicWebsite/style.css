@@ -214,15 +214,12 @@ main {
 
 .modal-content {
     display: flex;
-    flex-direction: row;
-
-    flex-wrap: wrap;
-background-color: #fefefe;
-margin: 40% auto;
-padding: 20px;
-border: 1px solid #888;
-width: auto;
-
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: auto;
 }
 
 .close-btn {
@@ -491,6 +488,16 @@ footer {
         background-color: white;
         border-radius: 4px;
         width: 63%;
+    }
+    .modal-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #fefefe;
+        margin: 40% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: auto;
     }
 
 }
