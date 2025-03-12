@@ -1,4 +1,3 @@
-// Classes for Post, User, and Comment
 class Post {
     constructor(postData, user, comments) {
         this.id = postData.id;
@@ -31,7 +30,6 @@ class Comment {
     }
 }
 
-// Fetch functions
 async function fetchData(url) {
     try {
         const response = await fetch(url);
@@ -143,7 +141,6 @@ function renderMorePosts() {
     }
 }
 
-// Function to handle the modal
 function openUserProfile(userId) {
     const user = allPosts.find(post => post.user.id === userId)?.user;
 
@@ -189,38 +186,32 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         let isValid = true;
         
-        // Validate Name (must not contain numbers)
-        const namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/;
+        const namePattern = /^[A-Za-z]+$/;
         if (!namePattern.test(nameInput.value.trim())) {
             alert("Name must not contain numbers.");
             isValid = false;
         }
         
-        // Validate Email (must contain '@' and '.')
         if (!emailInput.value.includes("@") || !emailInput.value.includes(".")) {
             alert("Please enter a valid email address.");
             isValid = false;
         }
 
-        // Validate Checkbox (must be checked)
         if (!checkbox.checked) {
             alert("You must confirm that your details are correct.");
             isValid = false;
         }
 
-        // Prevent form submission if validation fails
         if (!isValid) {
             event.preventDefault();
         } else {
-            event.preventDefault(); // Prevent actual submission for demo purposes
+            event.preventDefault();
             alert("Your message has been sent successfully!");
             form.reset();
         }
     });
 });
 
-
-// Scroll to load more posts
 function handleScroll() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
         renderMorePosts();

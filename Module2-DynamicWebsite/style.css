@@ -80,6 +80,7 @@ header ul {
     margin: 0px;
     padding: 0px;
 }
+
 header nav ul li {
     list-style-type: none;
     position: relative;
@@ -229,8 +230,7 @@ font-size: 28px;
 font-weight: bold;
 }
 
-.close-btn:hover,
-.close-btn:focus {
+.close-btn:hover, .close-btn:focus {
 color: black;
 text-decoration: none;
 cursor: pointer;
@@ -499,7 +499,6 @@ footer {
         border: 1px solid #888;
         width: auto;
     }
-
 }
 /* ------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------ */
